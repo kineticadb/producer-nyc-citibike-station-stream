@@ -27,7 +27,9 @@ KAFKA_TOPIC_STATION_INFORM=os.getenv('KAFKA_TOPIC_STATION_INFORM')
 SRC_URI_STATION_STATUS = "https://gbfs.citibikenyc.com/gbfs/en/station_status.json"
 SRC_URI_STATION_INFORM = "https://gbfs.citibikenyc.com/gbfs/en/station_information.json"
 
-REFRESH_DELAY_SECONDS = 30
+REFRESH_DELAY_SECONDS_DEFAULT = 30
+
+REFRESH_DELAY_SECONDS = int(os.getenv('REFRESH_DELAY_SECONDS', REFRESH_DELAY_SECONDS_DEFAULT))
 
 logging.basicConfig(format='%(asctime)s %(message)s', level=logging.WARN)
 
@@ -77,7 +79,7 @@ def main():
 		except:
 			logging.exception("message")
 
-		logging.info(f"Sleeping for {REFRESH_DELAY_SECONDS} seconds until next push")
+		print(f"{push_stamp} Sleeping for {REFRESH_DELAY_SECONDS} seconds until next push")
 		time.sleep(REFRESH_DELAY_SECONDS)
 
 		

@@ -1,4 +1,4 @@
-FROM python:3.6-slim
+FROM python:3.7-slim
 
 LABEL maintainer="support@kinetica.com"
 LABEL Description="Kinetica Machine Learning 'Bring Your Own Container' Sample Continuous Ingestor: NYC CitiBike Station Status and Bike Inventory"

@@ -4,5 +4,5 @@ export KAFKA_HOST=XXX
 export KAFKA_PORT=9092
 export KAFKA_TOPIC_STATION_STATUS=nyc-citibike-station-status
 export KAFKA_TOPIC_STATION_INFORM=nyc-citibike-station-info
-
+export REFRESH_DELAY_SECONDS=30
 python stream.py
